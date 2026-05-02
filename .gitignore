@@ -1,0 +1,13 @@
+# 빌드 산출물
+back-end/target/
+front-end/node_modules/
+
+# DB 접속 정보 (민감 정보)
+back-end/src/main/resources/db.properties
+back-end/src/main/resources/database.properties
+
+# IDE
+.idea/
+
+# 브레인스토밍 세션
+.superpowers/

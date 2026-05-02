@@ -30,9 +30,10 @@
         <property name="mapperLocations"  value="classpath:mapper/*.xml"/>
     </bean>
 
-    <!-- com.example.mapper 패키지 자동 스캔 -->
+    <!-- com.example.dao 패키지 자동 스캔 (기존 프로젝트 관례) -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.example.mapper"/>
+        <property name="basePackage" value="com.example.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
     <!-- 트랜잭션 매니저 -->

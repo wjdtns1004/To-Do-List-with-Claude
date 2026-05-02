@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.ExampleDao">
+
+    <!-- 결과 매핑 -->
+    <resultMap id="exampleResultMap" type="ExampleVO">
+        <id     property="id"          column="id"/>
+        <result property="name"        column="name"/>
+        <result property="description" column="description"/>
+        <result property="createdAt"   column="created_at"/>
+    </resultMap>
+
+    <!-- 전체 목록 조회 -->
+    <select id="selectAll" resultMap="exampleResultMap">
+        SELECT id, name, description, created_at
+        FROM example
+        ORDER BY id DESC
+    </select>
+
+    <!-- 단건 조회 -->
+    <select id="selectById" parameterType="int" resultMap="exampleResultMap">
+        SELECT id, name, description, created_at
+        FROM example
+        WHERE id = #{id}
+    </select>
+
+    <!-- 등록 -->
+    <insert id="insert" parameterType="ExampleVO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO example (name, description, created_at)
+        VALUES (#{name}, #{description}, NOW())
+    </insert>
+
+    <!-- 수정 -->
+    <update id="update" parameterType="ExampleVO">
+        UPDATE example
+        SET name        = #{name},
+            description = #{description}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 삭제 -->
+    <delete id="delete" parameterType="int">
+        DELETE FROM example
+        WHERE id = #{id}
+    </delete>
+
+</mapper>
