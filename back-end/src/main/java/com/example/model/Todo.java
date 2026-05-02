@@ -2,6 +2,9 @@ package com.example.model;
 
 import java.time.LocalDateTime;
 
+/**
+ * 할일 VO
+ */
 public class Todo {
     private Long id;
     private String title;

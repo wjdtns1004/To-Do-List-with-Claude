@@ -14,3 +14,11 @@ CREATE TABLE IF NOT EXISTS example (
 INSERT INTO example (name, description) VALUES
     ('샘플1', '첫 번째 샘플 데이터'),
     ('샘플2', '두 번째 샘플 데이터');
+
+-- 할일 테이블
+CREATE TABLE IF NOT EXISTS todo (
+    id         BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title      VARCHAR(200) NOT NULL,
+    completed  TINYINT(1)   NOT NULL DEFAULT 0,
+    created_at DATETIME     NOT NULL DEFAULT NOW()
+);
