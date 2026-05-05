@@ -11,3 +11,9 @@ back-end/src/main/resources/database.properties
 
 # 브레인스토밍 세션
 .superpowers/
+
+# Claude Code
+.claude/
+
+# Playwright 테스트 결과
+.playwright-mcp/

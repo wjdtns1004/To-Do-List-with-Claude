@@ -1,0 +1,10 @@
+{
+  "name": "todo-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "serve -p 8000 ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

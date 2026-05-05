@@ -6,26 +6,26 @@
     <!-- 전체 할일 목록 조회 -->
     <select id="selectAll" resultType="Todo">
         SELECT id, title, completed, created_at
-        FROM todo
+        FROM vibecodingtest.TO_DO
         ORDER BY created_at DESC
     </select>
 
     <!-- 할일 등록 -->
     <insert id="insert" parameterType="Todo" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO todo (title, completed, created_at)
+        INSERT INTO vibecodingtest.TO_DO (title, completed, created_at)
         VALUES (#{title}, #{completed}, NOW())
     </insert>
 
     <!-- 할일 수정 -->
     <update id="update" parameterType="Todo">
-        UPDATE todo
+        UPDATE vibecodingtest.TO_DO
         SET title = #{title}, completed = #{completed}
         WHERE id = #{id}
     </update>
 
     <!-- 할일 삭제 -->
     <delete id="delete" parameterType="Long">
-        DELETE FROM todo WHERE id = #{id}
+        DELETE FROM vibecodingtest.TO_DO WHERE id = #{id}
     </delete>
 
 </mapper>

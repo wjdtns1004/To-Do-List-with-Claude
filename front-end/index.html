@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>To-Do List</h1>
+    </header>
+
+    <main>
+        <section id="content">
+            <!-- 알림 메시지 -->
+            <div id="alert" class="alert hidden"></div>
+
+            <!-- 입력 폼 -->
+            <div class="input-group">
+                <input type="text" id="todoInput" placeholder="할일을 입력하세요..." maxlength="200">
+                <button id="btnAdd">추가</button>
+            </div>
+
+            <!-- 탭 필터 -->
+            <div class="tabs">
+                <button class="tab active" data-filter="all">전체</button>
+                <button class="tab" data-filter="incomplete">미완료</button>
+                <button class="tab" data-filter="complete">완료</button>
+            </div>
+
+            <!-- 할일 목록 -->
+            <ul id="todoList"></ul>
+
+            <!-- 카운트 -->
+            <p id="count" class="count"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 To-Do List</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
